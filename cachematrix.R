@@ -1,8 +1,9 @@
 ## Put comments here that give an overall description of what your
 ## functions do
 
-## Similar to the makeVector function, this function will preserve the inverse of a matrix after the 
-## first attempt to evaluate it.
+## Similar to the makeVector function, this function is responsible for creating a matrix that can
+## maintain a cached inverse of itself.  It holds two variables: x, which is the underlying matrix and
+## i, which is the inverse matrix.
 
 makeCacheMatrix <- function(x = matrix()) {
   i <- NULL
@@ -19,7 +20,9 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## This is the primary function to evaluate if the inverse of a matrix created by makeCacheMatrix
+## contains a cached inverse already.  If so, it merely returns the already evaluated inverse.
+## Otherwise, it evaluates the inverse.
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
